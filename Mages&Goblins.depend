@@ -1,0 +1,117 @@
+# depslib dependency file v1.0
+1716775340 source:c:\users\legion\desktop\zhi project\final\mages&goblins\algorithms.cpp
+	"algorithms.h"
+	<Vector.h>
+	<Grid.h>
+	<cassert>
+	<Queue.h>
+
+1716775340 c:\users\legion\desktop\zhi project\final\mages&goblins\algorithms.h
+	<Grid.h>
+	<Vector.h>
+	"field.h"
+
+1717608336 c:\users\legion\desktop\zhi project\final\mages&goblins\field.h
+	<ostream>
+	"grid.h"
+
+1717609373 source:c:\users\legion\desktop\zhi project\final\mages&goblins\field.cpp
+	<string>
+	<cassert>
+	<iomanip>
+	"field.h"
+	"units.h"
+	"grid.h"
+
+1716775403 c:\users\legion\desktop\zhi project\final\mages&goblins\units.h
+	<memory>
+	<string>
+	"field.h"
+
+1717609996 source:c:\users\legion\desktop\zhi project\final\mages&goblins\main.cpp
+	<iostream>
+	<fstream>
+	"field.h"
+	"units.h"
+	"engine.h"
+	<string>
+	<cassert>
+
+1717609262 c:\users\legion\desktop\zhi project\final\mages&goblins\engine.h
+	<iostream>
+	"field.h"
+
+1716775485 source:c:\users\legion\desktop\zhi project\final\mages&goblins\units.cpp
+	"units.h"
+	"field.h"
+	<cassert>
+
+1717609795 source:c:\users\legion\desktop\zhi project\final\mages&goblins\engine.cpp
+	<sstream>
+	<iomanip>
+	<cassert>
+	<Queue.h>
+	"engine.h"
+	"units.h"
+	"vector.h"
+	"Stack.h"
+	"algorithms.h"
+
+1716775340 source:c:\users\legion\desktop\zhi project\final\source\1_task1\algorithms.cpp
+	"algorithms.h"
+	<Vector.h>
+	<Grid.h>
+	<cassert>
+	<Queue.h>
+
+1716775340 c:\users\legion\desktop\zhi project\final\source\1_task1\algorithms.h
+	<Grid.h>
+	<Vector.h>
+	"field.h"
+
+1717608336 c:\users\legion\desktop\zhi project\final\source\1_task1\field.h
+	<ostream>
+	"grid.h"
+
+1717637394 source:c:\users\legion\desktop\zhi project\final\source\1_task1\field.cpp
+	<string>
+	<cassert>
+	<iomanip>
+	"field.h"
+	"units.h"
+	"grid.h"
+
+1716775403 c:\users\legion\desktop\zhi project\final\source\1_task1\units.h
+	<memory>
+	<string>
+	"field.h"
+
+1718121300 source:c:\users\legion\desktop\zhi project\final\source\1_task1\main.cpp
+	<iostream>
+	<fstream>
+	"field.h"
+	"units.h"
+	"engine.h"
+	<string>
+	<cassert>
+
+1717609262 c:\users\legion\desktop\zhi project\final\source\1_task1\engine.h
+	<iostream>
+	"field.h"
+
+1716775485 source:c:\users\legion\desktop\zhi project\final\source\1_task1\units.cpp
+	"units.h"
+	"field.h"
+	<cassert>
+
+1718724952 source:c:\users\legion\desktop\zhi project\final\source\1_task1\engine.cpp
+	<sstream>
+	<iomanip>
+	<cassert>
+	<Queue.h>
+	"engine.h"
+	"units.h"
+	"vector.h"
+	"Stack.h"
+	"algorithms.h"
+

@@ -1,0 +1,166 @@
+#include <string>
+#include <cassert>
+#include <iomanip>
+#include "field.h"
+#include "units.h"
+#include "grid.h"
+using namespace std;
+
+/* Battle field */
+
+// Constructor
+Field::Field(int h, int w)
+    : units(h, w), terrains(h, w)
+{
+    assert (h > 0 && h <=20 && w > 0 && w <= 20);
+    for (int i = 0; i < h; i++) {
+        for (int j = 0; j < w; j++) units[i][j] = nullptr;
+    }
+
+}
+
+// Get the height of the field
+
+int Field::getHeight() const
+{
+    return units.numRows();
+}
+
+// Get the width of the field
+int Field::getWidth() const
+{
+    return units.numCols();
+}
+
+// In bounds check
+bool Field::inBounds(int r, int c) const
+{
+    return units.inBounds(r, c);
+}
+
+// Get the unit at row and col
+Unit* Field::getUnit(int r, int c) const
+{
+    assert (units.inBounds(r, c));
+    return units.get(r, c);
+}
+
+// Set a new unit at row and col
+// Return false if the coordinate is already occupied
+bool Field::setUnit(int row, int col, Unit* u)
+{
+    assert (units.inBounds(row, col));
+
+    if (units[row][col] == nullptr) {
+        units[row][col] = u;
+        return true;
+    }
+    else
+        return false;
+}
+
+// Remove the unit at row and col
+// Return false if there is no unit at that coordinate
+bool Field::removeUnit(int row, int col)
+{
+    //Fill in your code here
+}
+
+// Move a unit to a different coordinate
+// Return false if the source does not exist or
+// the target coordinate is already occupied or
+bool Field::moveUnit(int srow, int scol, int trow, int tcol)
+{
+    //Fill in your code here
+}
+
+// Get and set the terrain of a square
+Terrain Field::getTerrain(int row, int col) const
+{
+    assert (terrains.inBounds(row, col));
+
+    return terrains[row][col];
+}
+
+void Field::setTerrain(int row, int col, Terrain t)
+{
+    assert (terrains.inBounds(row, col));
+
+    terrains[row][col] = t;
+}
+
+// Reclaim all the units
+Field::~Field()
+{
+    // Implement it if your want to delete the units via [field] instead of [units]
+}
+
+int Field::getUnitHeight(void) const
+{
+    return units.numCols();
+}
+int Field::getUnitWidth(void) const
+{
+    return units.numRows();
+}
+// Display the symbol for terrains
+string getTerrainSymbol(Terrain t)
+{
+    switch (t) {
+    case PLAIN:
+        return "  ";
+    case MOUNTAIN:
+        return "/\\";
+    case WATER:
+        return "~~";
+    default:
+        return "";
+    }
+
+    assert(false);
+}
+
+// Print the horizontal line
+void printHLine(ostream& os, int n)
+{
+    os << "  ";
+    for (int i = 0; i < n; i++)
+        os << "+--";
+    os << "+" << endl;
+}
+
+// Display field
+ostream& operator<<(ostream& os, const Field& field)
+{
+    int height = field.getHeight();
+    int width = field.getWidth();
+    cout << "height = " << field.getUnitHeight();
+    cout << endl << "width = " << field.getUnitWidth() << endl;
+    // Print the x coordinates
+    os << "  ";
+    for (int i = 0; i < width; i++)
+        os << ' ' << setw(2) << i;
+    os << endl;
+
+    printHLine(os, width);
+    for (int i = 0; i < height; i++) {
+        os << setw(2) << i;
+        for (int j = 0; j < width; j++) {
+            os << '|';
+cout << 1
+          Unit* u = field.getUnit(i,j);
+            cout << 1111111111111111;
+            if (u != nullptr)
+                os << getUnitSymbol(*u);
+            else {
+                string ts = getTerrainSymbol(field.getTerrain(i,j));
+                os << ts;
+            }
+
+        }
+        os << '|' << endl;
+        printHLine(os, width);
+    }
+    os << endl;
+    return os;
+}
